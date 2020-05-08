@@ -1,0 +1,6 @@
+framework module GoodsList {
+  umbrella header "GoodsList-umbrella.h"
+
+  export *
+  module * { export * }
+}

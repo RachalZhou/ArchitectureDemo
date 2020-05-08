@@ -1,0 +1,42 @@
+PODS:
+  - CTMediator (31)
+  - GoodsDetail (0.0.1)
+  - GoodsDetailExtension (0.0.1):
+    - CTMediator
+  - GoodsList (0.0.1):
+    - CTMediator
+    - GoodsDetailExtension
+  - GoodsListCategory (0.0.1):
+    - CTMediator
+
+DEPENDENCIES:
+  - CTMediator
+  - GoodsDetail (from `MyModule/GoodsDetail`)
+  - GoodsDetailExtension (from `MyModule/GoodsDetailExtension`)
+  - GoodsList (from `MyModule/GoodsList`)
+  - GoodsListCategory (from `MyModule/GoodsListCategory`)
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - CTMediator
+
+EXTERNAL SOURCES:
+  GoodsDetail:
+    :path: MyModule/GoodsDetail
+  GoodsDetailExtension:
+    :path: MyModule/GoodsDetailExtension
+  GoodsList:
+    :path: MyModule/GoodsList
+  GoodsListCategory:
+    :path: MyModule/GoodsListCategory
+
+SPEC CHECKSUMS:
+  CTMediator: 24a1279bd0909608c7d6a704e660149cc64e5f87
+  GoodsDetail: 975a9af1dd2f84c9ba8d0d848d219c1eb1b71399
+  GoodsDetailExtension: ead6b575e87d525f7bfc88ac3d11af9910596bd3
+  GoodsList: 8a7ff78662f2fb3e2323d018c2545e0c57860ca7
+  GoodsListCategory: e7b8121f33cf93182178c0bb0be4891a296092f4
+
+PODFILE CHECKSUM: 7664ae0518b088fa6619fbf3a7607d858761f317
+
+COCOAPODS: 1.9.1

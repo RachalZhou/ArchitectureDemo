@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-MyDemo/Pods-MyDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework
+${BUILT_PRODUCTS_DIR}/GoodsDetail/GoodsDetail.framework
+${BUILT_PRODUCTS_DIR}/GoodsDetailExtension/GoodsDetailExtension.framework
+${BUILT_PRODUCTS_DIR}/GoodsList/GoodsList.framework
+${BUILT_PRODUCTS_DIR}/GoodsListCategory/GoodsListCategory.framework

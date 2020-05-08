@@ -1,0 +1,6 @@
+framework module GoodsDetail {
+  umbrella header "GoodsDetail-umbrella.h"
+
+  export *
+  module * { export * }
+}
