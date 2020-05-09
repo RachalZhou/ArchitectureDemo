@@ -1,14 +1,14 @@
 {
   "name": "GoodsListCategory",
   "version": "0.0.1",
-  "summary": "GoodsList.",
+  "summary": "Goods list category.",
   "description": "Goods list category module.",
   "homepage": "http://EXAMPLE/GoodsList",
   "authors": {
     "Rachal": "zrcrachal@gmail.com"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "source": {
     "git": "",

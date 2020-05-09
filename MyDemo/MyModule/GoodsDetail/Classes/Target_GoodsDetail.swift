@@ -12,8 +12,10 @@ import UIKit
     
     // 注意：第一个参数一定要用"_"
     @objc func Action_viewControllerForGoodsDetail(_ params: NSDictionary) -> UIViewController {
-        let id: Int = params["id"] as? Int ?? 0
-        let vc = GoodsDetailViewController(id: id)
-        return vc
+        guard
+            let id: Int = params["id"] as? Int,
+            let callback = params["callback"] as? (String) -> Void
+            else { return UIViewController() }
+        return GoodsDetailViewController(id: id, callback: callback)
     }
 }

@@ -10,5 +10,4 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "", :tag => "#{spec.version}" }
   spec.source_files  = "Classes", "Classes/**/*.{h,m}"
   spec.dependency 'CTMediator'
-  spec.dependency 'GoodsDetailExtension'
 end

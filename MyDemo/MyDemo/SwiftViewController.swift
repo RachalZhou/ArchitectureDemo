@@ -36,12 +36,22 @@ class SwiftViewController: UIViewController {
     }
     
     @objc func goToSwift() {
-        let vc = CTMediator.sharedInstance().viewController(forGoodsDetail: 9099)
+        let vc = CTMediator.sharedInstance().viewController(forGoodsDetail: 9099, callback: { msg in
+            print(msg)
+        })
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goToObjc() {
-        let vc = CTMediator.sharedInstance().viewController(forGoodsList: "大米", kindId: 232, storeId: 2)
-        navigationController?.pushViewController(vc, animated: true)
+        let listVC = CTMediator.sharedInstance().viewController(forGoodsList: "大米", kindId: 232, storeId: 2, didSelectGoodsCallback: { (goodsId) in
+            
+            // goToSwift
+            let detailVC = CTMediator.sharedInstance().viewController(forGoodsDetail: goodsId, callback: { msg in
+                print(msg)
+            })
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+        })
+        navigationController?.pushViewController(listVC, animated: true)
     }
 }

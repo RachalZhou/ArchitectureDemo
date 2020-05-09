@@ -41,12 +41,23 @@
 }
 
 - (void)goToObjc {
-    UIViewController *vc = [[CTMediator sharedInstance] viewControllerForGoodsList:@"大米" kindId:222 storeId:1];
-    [self.navigationController pushViewController:vc animated:YES];
+    UIViewController *listVC = [[CTMediator sharedInstance] viewControllerForGoodsList:@"大米" kindId:222 storeId:1 didSelectGoodsCallback:^(NSInteger goodsId) {
+        
+        // goToSwift
+        NSLog(@"回调的商品：%ld", goodsId);
+        UIViewController *detailVC = [[CTMediator sharedInstance] viewControllerForGoodsDetail:goodsId callback:^(NSString *msg) {
+            NSLog(@"%@", msg);
+        }];
+        [self.navigationController pushViewController:detailVC animated:YES];
+        
+    }];
+    [self.navigationController pushViewController:listVC animated:YES];
 }
 
 - (void)goToSwift {
-    UIViewController *vc = [[CTMediator sharedInstance] viewControllerForGoodsDetail:8088];
+    UIViewController *vc = [[CTMediator sharedInstance] viewControllerForGoodsDetail:8088 callback:^(NSString * msg) {
+        NSLog(@"%@", msg);
+    }];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

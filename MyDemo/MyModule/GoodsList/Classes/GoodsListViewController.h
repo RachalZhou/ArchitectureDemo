@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GoodsListViewController : UIViewController
 
-- (instancetype)initWithKeyWord:(NSString *)keyWord kindId:(NSInteger)kindId storeId:(NSInteger)storeId;
+- (instancetype)initWithKeyWord:(NSString *)keyWord kindId:(NSInteger)kindId storeId:(NSInteger)storeId didSelectGoodsCallback:(void(^)(NSInteger goodsId))callback;
 
 @end
 

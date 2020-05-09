@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CTMediator (GoodsList)
 
-- (UIViewController *)viewControllerForGoodsList:(NSString *)keyWord kindId:(NSInteger)kindId storeId:(NSInteger)storeId;
+- (UIViewController *)viewControllerForGoodsList:(NSString *)keyWord kindId:(NSInteger)kindId storeId:(NSInteger)storeId didSelectGoodsCallback:(void(^)(NSInteger goodsId))callback;
 
 @end
 

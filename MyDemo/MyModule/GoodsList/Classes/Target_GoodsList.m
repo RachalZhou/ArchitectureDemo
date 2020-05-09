@@ -12,13 +12,16 @@
 @implementation Target_GoodsList
 
 - (UIViewController *)Action_viewControllerForGoodsList:(NSDictionary *)params {
+    
     NSString *keyWord = params[@"keyWord"];
     NSInteger kindId = [params[@"kindId"] integerValue];
     NSInteger storeId = [params[@"storeId"] integerValue];
+    typedef void(^SelectGoodsCallback)(NSInteger);
+    SelectGoodsCallback callback = params[@"callback"];
     
     GoodsListViewController *vc = [[GoodsListViewController alloc] initWithKeyWord:keyWord
                                                                              kindId:kindId
-                                                                            storeId:storeId];
+                                                                            storeId:storeId didSelectGoodsCallback:callback];
     return vc;
 }
 

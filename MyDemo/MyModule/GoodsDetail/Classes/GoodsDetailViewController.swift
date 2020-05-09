@@ -11,10 +11,12 @@ import UIKit
 class GoodsDetailViewController: UIViewController {
     
     private var id: Int
+    private var callback: (String) -> ()
     
     // 注意：这里务必加上@objc
-    @objc init(id: Int) {
+    @objc init(id: Int, callback: @escaping (String) -> ()) {
         self.id = id
+        self.callback = callback
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,6 +42,8 @@ class GoodsDetailViewController: UIViewController {
             btn.addTarget(self, action: #selector(backToRoot), for: .touchUpInside)
             view.addSubview(btn)
         }
+        
+        callback("成功调用商品详情")
     }
     
     @objc private func backToRoot() {

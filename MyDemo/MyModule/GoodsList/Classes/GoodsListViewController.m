@@ -7,14 +7,15 @@
 //
 
 #import "GoodsListViewController.h"
-#import <CTMediator/CTMediator.h>
-#import <GoodsDetailExtension/GoodsDetailExtension-Swift.h>
+
+typedef void(^SelectGoodsCallback)(NSInteger);
 
 @interface GoodsListViewController ()
 
 @property (nonatomic, copy) NSString *keyWord;
 @property (nonatomic, assign) NSInteger kindId;
 @property (nonatomic, assign) NSInteger storeId;
+@property (nonatomic, copy) SelectGoodsCallback callback;
 
 @end
 
@@ -28,6 +29,11 @@
         self.storeId = storeId;
     }
     return self;
+}
+
+- (instancetype)initWithKeyWord:(NSString *)keyWord kindId:(NSInteger)kindId storeId:(NSInteger)storeId didSelectGoodsCallback:(void(^)(NSInteger goodsId))callback {
+    self.callback = callback;
+    return [self initWithKeyWord:keyWord kindId:kindId storeId:storeId];
 }
 
 - (void)viewDidLoad {
@@ -52,9 +58,9 @@
 }
 
 - (void)goToDetail {
-    NSInteger goodsId = 8088;
-    UIViewController *vc = [[CTMediator sharedInstance] viewControllerForGoodsDetail:goodsId];
-    [self.navigationController pushViewController:vc animated:YES];
+    if (self.callback) {
+        self.callback(8088);
+    }
 }
 
 @end

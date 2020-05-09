@@ -9,8 +9,9 @@
 import CTMediator
 
 public extension CTMediator {
-    @objc func viewController(forGoodsDetail id: Int) -> UIViewController {
+    @objc func viewController(forGoodsDetail id: Int, callback: @escaping (String) -> ()) -> UIViewController {
         let params = ["id" : id,
+                      "callback": callback,
                       kCTMediatorParamsKeySwiftTargetModuleName: "GoodsDetail"] as [AnyHashable : Any]
         let vc = self.performTarget("GoodsDetail",
                                     action: "viewControllerForGoodsDetail",

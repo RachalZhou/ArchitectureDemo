@@ -10,10 +10,12 @@
 
 @implementation CTMediator (GoodsListActions)
 
-- (UIViewController *)viewControllerForGoodsList:(NSString *)keyWord kindId:(NSInteger)kindId storeId:(NSInteger)storeId {
+- (UIViewController *)viewControllerForGoodsList:(NSString *)keyWord kindId:(NSInteger)kindId storeId:(NSInteger)storeId didSelectGoodsCallback:(void(^)(NSInteger goodsId))callback {
+    
     NSDictionary *params = @{@"keyWord": keyWord,
                              @"kindId": @(kindId),
-                             @"storeId": @(storeId)};
+                             @"storeId": @(storeId),
+                             @"callback":callback};
     UIViewController *vc = [self performTarget:@"GoodsList"
                                         action:@"viewControllerForGoodsList"
                                         params:params
